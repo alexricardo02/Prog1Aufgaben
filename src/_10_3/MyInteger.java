@@ -86,21 +86,51 @@ public class MyInteger {
         return Integer.parseInt(newString);
     }
 
-
-
-
-
-
-
-
-
-
-
     public static void main(String[] args) {
-        // Test the isPrime method with the number 4 (Expected output: false)
-        System.out.println(new MyInteger(4).isPrime());
+        // Crear objetos MyInteger
+        MyInteger myInt1 = new MyInteger(12);
+        MyInteger myInt2 = new MyInteger(17);
 
-        // Test the isPrime method with the number 13 (Expected output: true)
-        System.out.println(new MyInteger(13).isPrime());
+        // Testear métodos de instancia
+        System.out.println("Testing instance methods:");
+        System.out.println("myInt1 value: " + myInt1.getValue()); // 12
+        System.out.println("myInt1 isEven: " + myInt1.isEven()); // true
+        System.out.println("myInt1 isOdd: " + myInt1.isOdd());   // false
+        System.out.println("myInt1 isPrime: " + myInt1.isPrime()); // false
+        System.out.println("myInt2 value: " + myInt2.getValue()); // 17
+        System.out.println("myInt2 isEven: " + myInt2.isEven()); // false
+        System.out.println("myInt2 isOdd: " + myInt2.isOdd());   // true
+        System.out.println("myInt2 isPrime: " + myInt2.isPrime()); // true
+
+        // Testear métodos estáticos
+        System.out.println("\nTesting static methods:");
+        System.out.println("isEven(10): " + MyInteger.isEven(10)); // true
+        System.out.println("isOdd(7): " + MyInteger.isOdd(7));     // true
+        System.out.println("isPrime(19): " + MyInteger.isPrime(19)); // true
+        System.out.println("isEven(myInt1): " + MyInteger.isEven(myInt1)); // true
+        System.out.println("isOdd(myInt2): " + MyInteger.isOdd(myInt2));   // true
+        System.out.println("isPrime(myInt2): " + MyInteger.isPrime(myInt2)); // true
+
+        // Testear métodos equals
+        System.out.println("\nTesting equals methods:");
+        System.out.println("myInt1 equals 12: " + myInt1.equals(12)); // true
+        System.out.println("myInt1 equals myInt2: " + myInt1.equals(myInt2)); // false
+        System.out.println("myInt2 equals 17: " + myInt2.equals(17)); // true
+
+        // Testear métodos parseInt
+        System.out.println("\nTesting parseInt methods:");
+        char[] charArray = {'1', '2', '3'};
+        System.out.println("parseInt(char[]): " + MyInteger.parseInt(charArray)); // 123
+        String numericString = "456";
+        System.out.println("parseInt(String): " + MyInteger.parseInt(numericString)); // 456
+
+        // Testear excepción en parseInt con un string inválido
+        System.out.println("\nTesting parseInt exception handling:");
+        try {
+            String invalidString = "45a";
+            MyInteger.parseInt(invalidString);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Caught exception: " + e.getMessage());
+        }
     }
 }
