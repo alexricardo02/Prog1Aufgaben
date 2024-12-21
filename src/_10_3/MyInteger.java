@@ -1,5 +1,6 @@
 package _10_3;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class MyInteger {
@@ -76,13 +77,12 @@ public class MyInteger {
     }
 
     public static int parseInt(String newString) {
-        List<Character> listOfNumbers = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}
-        for(char s : newString.toCharArray()){
-            if (!listOfNumbers.contains(s)){
-                throw new IllegalArgumentException("Your string must be a number, not a ")
+        List<Character> listOfNumbers = Arrays.asList('1', '2', '3', '4', '5', '6', '7', '8', '9', '0');
+        for(char s : newString.toCharArray()) {
+            if (!listOfNumbers.contains(s)) {
+                throw new IllegalArgumentException("Your string must be a number");
             }
         }
-
         return Integer.parseInt(newString);
     }
 
