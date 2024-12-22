@@ -38,16 +38,28 @@ public class Queue {
         }
         size --;
         return removedElement;
-
-
     }
 
     public boolean empty(){
-        return elements.isEmpty();
+        return size == 0;
     }
 
     public int getSize() {
         return this.size;
+    }
+
+    public static void main(String[] args) {
+        Queue queue = new Queue();
+        // Enqueue numbers from 1 to 20
+        for (int i = 1; i <= 20; i++) {
+            queue.enqueue(i);
+        }
+
+        // Dequeue and display each element
+        System.out.println("Dequeued elements: ");
+        while (!queue.empty()) {
+            System.out.print(queue.dequeue() + " ");
+        }
     }
 
 }
