@@ -39,8 +39,6 @@ public class MyRectangle2D {
                 (r.y - r.height/2) >= this.y - (this.height / 2);
     }
 
-
-
     public double getWidth() {
         return width;
     }
