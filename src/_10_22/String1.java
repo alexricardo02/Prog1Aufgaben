@@ -38,10 +38,10 @@ public class String1 {
     // Cosas a repasar:
     //  - static
     //  - arreglos y sus metodos
-    public static String1 valueOf(int i) {
-        String1 value = new String1();
-        char[] newChar = {i};
-
-
-    }
+    //public static String1 valueOf(int i) {
+    //    String1 value = new String1();
+    //    char[] newChar = {i};
+    //
+    //
+    //}
 }

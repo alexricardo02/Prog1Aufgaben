@@ -4,7 +4,7 @@ import com.sun.source.tree.NewArrayTree;
 
 public class MyString2 {
 
-    String string;
+    public String string = "";
 
     public MyString2(){
     }
@@ -15,8 +15,9 @@ public class MyString2 {
 
     public MyString2 substring(int begin) {
         MyString2 newString = new MyString2();
+        newString.string = "";
         for (int i=begin; i<=string.length(); i++) {
-            newString.string += this.string.charAt(i);
+            newString.string += this.string.charAt(i-1);
         }
         return newString;
     }
@@ -24,17 +25,17 @@ public class MyString2 {
 
     public MyString2 toUpperCase() {
         String upperString = "";
-        for (int i=0; i<=this.string.length(); i++) {
+        for (int i = 0; i < this.string.length(); i++) {
             char actualChar = this.string.charAt(i);
             if (actualChar >= 'a' && actualChar <= 'z') {
-               char upperChar = (char) (actualChar + 32);
-               upperString += upperChar;
+                char upperChar = (char) (actualChar - 32);
+                upperString += upperChar;
+            } else {
+                upperString += actualChar;
             }
         }
-
         MyString2 newString = new MyString2();
         newString.string = upperString;
-
         return newString;
     }
 
