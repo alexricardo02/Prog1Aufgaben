@@ -9,6 +9,9 @@ public class String1 {
 
     public char[] chars;
 
+    public String1 (){
+    }
+
     public String1 (char[] chars){
         this.chars = chars;
     }
@@ -36,6 +39,9 @@ public class String1 {
     //  - static
     //  - arreglos y sus metodos
     public static String1 valueOf(int i) {
-        return new String1(this.chars[i]);
+        String1 value = new String1();
+        char[] newChar = {i};
+
+
     }
 }
