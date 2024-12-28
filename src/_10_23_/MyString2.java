@@ -55,5 +55,6 @@ public class MyString2 {
             stringToLoad = "false";
         }
         return new MyString2(stringToLoad);
+        //
     }
 }
