@@ -50,6 +50,5 @@ public class AccountTest {
     public void testWithdrawFromSavingsAccount() {
         SavingsAccount savingsAccount = new SavingsAccount("S12345", 1500.0, 4.0);
         savingsAccount.withdraw(1600.0);  // Insufficient funds
-        assertExce
     }
 }
