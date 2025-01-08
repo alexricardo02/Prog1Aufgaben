@@ -4,6 +4,15 @@ import java.util.Scanner;
 
 public class Calculator {
 
+    public int calculation(String operation, int first, int second) {
+        return switch (operation) {
+            case "+" -> first + second;
+            case "-" -> first - second;
+            case "*" -> first * second;
+            case "/" -> first / second;
+            default -> 0;
+        };
+    }
 
 
     public static void main(String[] args){
@@ -15,8 +24,13 @@ public class Calculator {
         System.out.println("Enter second number");
         int second = sc.nextInt();
 
+        Calculator c = new Calculator();
 
+        try {
+            c.calculation(operation, first, second);
+        } catch (RuntimeException ignored) {
 
+        }
 
 
     }
