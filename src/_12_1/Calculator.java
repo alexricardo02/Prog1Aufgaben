@@ -1,5 +1,6 @@
 package _12_1;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
@@ -17,21 +18,24 @@ public class Calculator {
 
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter first number");
-        int first = sc.nextInt();
-        System.out.println("Enter operation");
-        String operation = sc.next();
-        System.out.println("Enter second number");
-        int second = sc.nextInt();
 
-        Calculator c = new Calculator();
-
-        try {
-            c.calculation(operation, first, second);
-        } catch (RuntimeException ignored) {
-
+        try (sc) {
+            System.out.println("Enter first number");
+            int first = sc.nextInt();
+            System.out.println("Enter operation");
+            String operation = sc.next();
+            System.out.println("Enter second number");
+            int second = sc.nextInt();
+            Calculator c = new Calculator();
+            int result = c.calculation(operation, first, second);
+            System.out.println(result);
+        } catch (InputMismatchException e) {
+            System.out.println("Error: Please enter a valid number.");
+        } catch (ArithmeticException e) {
+            System.out.println("Error: cannot divide by zero");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: invalid operation");
         }
-
 
     }
 }
